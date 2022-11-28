@@ -33,6 +33,8 @@ class Ostoskori:
         # poistaa tuotteen
         if poistettava.nimi() in self.__ostokset:
             self.__ostokset[poistettava.nimi()].muuta_lukumaaraa(-1)
+            if self.__ostokset[poistettava.nimi()].lukumaara() == 0:
+                self.__ostokset.pop(poistettava.nimi())
 
     def tyhjenna(self):
         pass
